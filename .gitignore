@@ -1,1 +1,3 @@
 .chef
+.kitchen/
+.kitchen.local.yml

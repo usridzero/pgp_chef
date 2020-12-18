@@ -1,0 +1,43 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-20.04
+  - name: centos-8
+
+suites:
+  - name: default
+    run_list:
+    attributes:
+
+driver_plugin: vagrant 
+
+driver_config: 
+
+   require_chef_omnibus: true 
+
+platforms: 
+
+   - name: ubuntu-12.04 
+
+   driver_config: 
+
+      box: opscode-ubuntu-12.04 
+
+      box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box 
+
+suites: 
+
+   - name: default 
+
+run_list: 
+
+   - recipe[TestSuite-handler] 
+
+   - recipe[my_cookbook_test]
+
+attributes: { my_cookbook: { greeting: 'Ohai, TestSuite!'} }
