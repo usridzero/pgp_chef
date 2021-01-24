@@ -3,4 +3,3 @@ class Chef::Recipe
   IPAddress(ipaddress).netmask 
   end 
 end
-  
